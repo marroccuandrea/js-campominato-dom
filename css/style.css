@@ -1,0 +1,31 @@
+.main-wrapper{
+    background-color: aquamarine;
+    height: 100vh;
+}
+
+.grid{
+    background-color: red;
+    width: 1000px;
+    aspect-ratio: 1;
+}
+
+.grid button{
+    width: 100%;
+}
+
+.square{
+    width: 10%;
+    height: 10%;
+    background-color: lightblue;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-grow: 0;
+    cursor: pointer;
+}
+
+.clicked{
+    background-color: blue;
+}

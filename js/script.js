@@ -1,19 +1,30 @@
 // Costanti
 const grid = document.querySelector('.grid');
 const btnStart = document.querySelector('.btn-start');
+const bombs = document.querySelector('.bombs');
 let arrBombs = [];
+let punteggio = 0;
 // Funzione reset con il button
 btnStart.addEventListener('click',init);
 
-
+function bombGenerator(){
+    
+    while(arrBombs.length < 16){
+       const randomNumber = Math.floor(Math.random() * 100) + 1;
+        if(!arrBombs.includes(randomNumber)){
+            arrBombs.push(randomNumber);
+        }
+    }
+return arrBombs;
+}
 
 // Aggiungo la funzione che genera 100 quadrati
 function init(){
     reset();
     bombGenerator();
+    punteggio = 0;
     for(let i = 1; i <= 100; i++){
         const square = getSquare(i);
-        let bombs = bombGenerator();
         grid.append(square);
     }
 }
@@ -23,30 +34,25 @@ function getSquare(indice){
     // Metto in evidenza i numeri dei quadrati, se tolto vengono nascosti fino al click
     // square.innerHTML = indice;
     square.sqID = indice;
-    // Funzione che mi restituirà l'elemento che clicco
+    // Funzione che aumenta il punteggio e aggiunge la classe bombs
+    // quando clicco su una casella in cui è presente la bomba
     square.addEventListener('click', function(){
-        // Elemento che fa apparire visivamente i numeri delle celle che premo
-        // this.innerHTML = this.sqID;
+        if (arrBombs.includes(indice)){
+            square.classList.add('bombs');
+            alert(`Hai perso !  Hai fatto: ${punteggio} punti`);
+        }else{
+            punteggio++;
+        }
+
         console.log(this.sqID);
         // Al click cambia colore, prendendo la classe creata in precedenza (clicked)
-        this.classList.toggle('clicked');
+        this.classList.add('clicked');
+        
+        console.log(punteggio);
     })
 
     return square;
 }
-
-// Create a function that generates 16 random numbers
-
-function bombGenerator(){
-    let arrBombs = [];
-    for(let i = 0; i < 16; i++ ){
-        let numBomba  = Math.floor(Math.random() * 100) + 1;
-        arrBombs.push(numBomba);
-    }
-    return arrBombs;
-}
-
-
 
 // Funzione reset
 function reset(){

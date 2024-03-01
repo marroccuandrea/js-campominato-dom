@@ -6,4 +6,6 @@ In seguito l’utente clicca su una cella: se il numero è presente nella lista 
 La partita termina quando il giocatore clicca su una bomba o quando raggiunge il numero massimo possibile di numeri consentiti (ovvero quando ha rivelato tutte le celle che non sono bombe).
 Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha cliccato su una cella che non era una bomba.
 ## Svolgimento
-1. 
+1. Creo la funzione che genera 16 numeri casuali e la collego all'array delle bombe che le contiene
+2. Creo la funzione che aggiunge la classe bombs alle 16 celle della griglia
+3. La stessa funzione possiede un counter che mi conta i punti ad ogni click delle celle non contenenti la bomba

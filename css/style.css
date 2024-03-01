@@ -4,7 +4,7 @@
 }
 
 .grid{
-    background-color: red;
+    background-color: white;
     width: 1000px;
     aspect-ratio: 1;
 }
@@ -27,9 +27,10 @@
 }
 
 .clicked{
+     pointer-events: none; /* Permette di cliccare una volta sola per quadrato */
     background-color: blue;
 }
 
 .bombs{
-    background-color: black;
+    background-color: red;
 }

@@ -1,7 +1,7 @@
 // Costanti
 const grid = document.querySelector('.grid');
 const btnStart = document.querySelector('.btn-start');
-
+let arrBombs = [];
 // Funzione reset con il button
 btnStart.addEventListener('click',init);
 
@@ -10,9 +10,10 @@ btnStart.addEventListener('click',init);
 // Aggiungo la funzione che genera 100 quadrati
 function init(){
     reset();
+    bombGenerator();
     for(let i = 1; i <= 100; i++){
         const square = getSquare(i);
-        let bombs = bombGenerator[i];
+        let bombs = bombGenerator();
         grid.append(square);
     }
 }
@@ -36,7 +37,7 @@ function getSquare(indice){
 
 // Create a function that generates 16 random numbers
 
-function bombGenerator (){
+function bombGenerator(){
     let arrBombs = [];
     for(let i = 0; i < 16; i++ ){
         let numBomba  = Math.floor(Math.random() * 100) + 1;

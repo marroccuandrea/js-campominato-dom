@@ -2,7 +2,7 @@
 const grid = document.querySelector('.grid');
 const btnStart = document.querySelector('.btn-start');
 const bombs = document.querySelector('.bombs');
-// const gridBlock = document.querySelector('.gridblock')
+
 let arrBombs = [];
 let punteggio = 0;
 // Funzione reset con il button

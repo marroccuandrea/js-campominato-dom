@@ -2,6 +2,7 @@
 const grid = document.querySelector('.grid');
 const btnStart = document.querySelector('.btn-start');
 const bombs = document.querySelector('.bombs');
+// const gridBlock = document.querySelector('.gridblock')
 let arrBombs = [];
 let punteggio = 0;
 // Funzione reset con il button
@@ -39,6 +40,9 @@ function getSquare(indice){
     square.addEventListener('click', function(){
         if (arrBombs.includes(indice)){
             square.classList.add('bombs');
+            const endGame = document.createElement('div');
+            endGame.className = 'gridblock';
+            grid.append(endGame);
             alert(`Hai perso !  Hai fatto: ${punteggio} punti`);
         }else{
             punteggio++;

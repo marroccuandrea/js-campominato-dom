@@ -9,6 +9,13 @@
     aspect-ratio: 1;
 }
 
+.gridblock{
+    width: 1000px;
+    aspect-ratio: 1;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
 .grid button{
     width: 100%;
 }
